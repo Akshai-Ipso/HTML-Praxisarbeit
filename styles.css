@@ -1,0 +1,303 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #f8f8f8;
+    --text-color: #fff;
+    --highlight-color: #555;
+    --font-size-base: 16px;
+    --font-size-heading: 2rem;
+    --font-size-subheading: 1.8rem;
+    --border-radius: 8px;
+    --transition-duration: 0.3s;
+}
+
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+/* Header mit Navigation */
+header {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    transition: transform var(--transition-duration) ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Vergrößert das Logo leicht beim Hover */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Einheitliche Bannergröße */
+.banner, .leistungen-banner, .kontakt-banner, .impressum-banner {
+    position: relative;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    height: 300px; /* Einheitsgröße für alle Banner */
+    overflow: hidden; /* Falls das Bild größer ist, wird es abgeschnitten */
+}
+
+/* Banner-Bilder anpassen */
+.banner img, .leistungen-banner img, .kontakt-banner img, .impressum-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild füllt den gesamten Banner-Bereich aus */
+}
+
+/* Banner-Titel zentrieren */
+.banner h1, .leistungen-banner h1, .kontakt-banner h1, .impressum-banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-heading);
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Schatten für Textlesbarkeit */
+    background-color: rgba(0, 0, 0, 0.3); /* Leicht transparenter Hintergrund für bessere Lesbarkeit */
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+/* Inhalte */
+.services, .leistungen-content, .kontakt-formular, .video-section, .impressum-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.service-items, .leistungen-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item, .leistung {
+    width: 30%;
+    margin: 1rem 0;
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Video-Bereich */
+.video-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--secondary-color); /* Hintergrundfarbe für den Video-Bereich */
+    border-radius: var(--border-radius); /* Runde Ecken für den Bereich */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für den Bereich */
+}
+
+.video-section h2 {
+    color: var(--primary-color); /* Farbe für den Titel des Video-Bereichs */
+    font-size: var(--font-size-heading);
+    margin-bottom: 1rem;
+}
+
+.video-section p {
+    color: var(--highlight-color); /* Leichte Hervorhebung für den Text unter dem Titel */
+    font-size: var(--font-size-base);
+    margin-bottom: 1rem;
+}
+
+.video-section video {
+    max-width: 100%; /* Video passt sich der Breite des Containers an */
+    height: auto; /* Erhält das Seitenverhältnis des Videos */
+    border-radius: var(--border-radius); /* Runde Ecken für das Video */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Schatten um das Video herum */
+}
+
+/* Über uns-Bereich */
+.about-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.about-text, .brand-logo img {
+    width: 45%;
+}
+
+/* Kontaktformular */
+.kontakt-formular form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--secondary-color); /* Heller Hintergrund */
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kontakt-formular h2 {
+    color: var(--primary-color); /* Dunklere Überschrift */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.kontakt-formular label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--primary-color); /* Dunkle Beschriftungen für besseren Kontrast */
+}
+
+.kontakt-formular input, .kontakt-formular textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    color: var(--primary-color); /* Dunkler Text für Eingabefelder */
+    background-color: #ffffff; /* Weißer Hintergrund für Eingabefelder */
+}
+
+.kontakt-formular input::placeholder, .kontakt-formular textarea::placeholder {
+    color: #aaa; /* Platzhalter in hellerer Farbe */
+}
+
+.kontakt-formular button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-duration) ease;
+}
+
+.kontakt-formular button:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Bereich für Ausgabe als Liste und Tabelle */
+#outputSection {
+    margin-top: 2rem;
+    text-align: left;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#outputSection h3 {
+    color: var(--primary-color); /* Dunkle Farbe für bessere Lesbarkeit */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#outputList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#outputList ul li {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-base);
+    color: var(--primary-color);
+}
+
+/* Tabelle für ausgegebene Daten */
+#outputTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--secondary-color);
+}
+
+#outputTable th, #outputTable td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ccc;
+    color: var(--primary-color);
+}
+
+#outputTable th {
+    background-color: var(--primary-color);
+    color: var(--text-color); /* Setzt die Textfarbe des Tabellenkopfs auf Weiß */
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+/* Impressum Inhalte */
+.impressum-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.impressum-content h2 {
+    color: var(--primary-color); /* Farbe der Titel auf der Impressum-Seite */
+    margin-top: 1.5rem;
+    font-size: var(--font-size-subheading);
+    font-weight: bold;
+}
+
+.impressum-content p {
+    margin-top: 1rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .service-items, .leistungen-content, .about-content {
+        flex-direction: column;
+    }
+
+    .service-item, .leistung, .about-text, .brand-logo img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner h1, .leistungen-banner h1, .kontakt-banner h1, .impressum-banner h1 {
+        font-size: 1.8rem;
+    }
+}

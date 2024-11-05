@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Aarau - Kontakt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Header mit Navigation -->
+    <header>
+        <nav>
+            <img src="pizzeria-logo.jpg" alt="Pizzeria Aarau Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="index.html#about">Über uns</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner-Bereich für Kontakt-Seite -->
+    <section class="kontakt-banner">
+        <img src="bilderkontakt-banner.jpg" alt="Kontakt Banner">
+        <h1>Kontaktieren Sie uns</h1>
+    </section>
+
+    <!-- Kontaktformular -->
+    <section class="kontakt-formular">
+        <h2>Kontaktformular</h2>
+        <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <label for="vorname">Vorname*</label>
+            <input type="text" id="vorname" name="vorname" required>
+
+            <label for="name">Name*</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Telefon (optional)</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="1234567890">
+
+            <label for="email">E-Mail-Adresse*</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="thema">Thema*</label>
+            <input type="text" id="thema" name="thema" required>
+
+            <label for="nachricht">Nachricht*</label>
+            <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
+
+            <button type="submit">Absenden</button>
+        </form>
+
+        <!-- Ausgabe als Liste und Tabelle -->
+        <section id="outputSection">
+            <h3>Eingegebene Daten</h3>
+            <div id="outputList"></div>
+            <table id="outputTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Zeitstempel</th>
+                        <th>Vorname</th>
+                        <th>Name</th>
+                        <th>Telefon</th>
+                        <th>E-Mail</th>
+                        <th>Thema</th>
+                        <th>Nachricht</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Pizzeria Aarau. Alle Rechte vorbehalten.</p>
+        <p>Kontakt: info@pizzeria-aarau.ch | Telefon: 062 123 45 67 | Aarau, Schweiz | <a href="impressum.html">Impressum</a></p>
+    </footer>
+
+    <!-- JavaScript für Validierung und Ausgabe -->
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const vorname = document.getElementById('vorname').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value || 'Nicht angegeben';
+            const email = document.getElementById('email').value;
+            const thema = document.getElementById('thema').value;
+            const nachricht = document.getElementById('nachricht').value;
+            const timestamp = new Date().toLocaleString();
+
+            // Ausgabe in der Konsole
+            console.log("Formulardaten:");
+            console.log("Vorname:", vorname);
+            console.log("Name:", name);
+            console.log("Telefon:", phone);
+            console.log("E-Mail:", email);
+            console.log("Thema:", thema);
+            console.log("Nachricht:", nachricht);
+            console.log("Zeitstempel:", timestamp);
+
+            // Ausgabe als Liste
+            const outputList = document.getElementById('outputList');
+            outputList.innerHTML = `
+                <ul>
+                    <li><strong>Zeitstempel:</strong> ${timestamp}</li>
+                    <li><strong>Vorname:</strong> ${vorname}</li>
+                    <li><strong>Name:</strong> ${name}</li>
+                    <li><strong>Telefon:</strong> ${phone}</li>
+                    <li><strong>E-Mail:</strong> ${email}</li>
+                    <li><strong>Thema:</strong> ${thema}</li>
+                    <li><strong>Nachricht:</strong> ${nachricht}</li>
+                </ul>
+            `;
+
+            // Ausgabe als Tabelle
+            const outputTable = document.getElementById('outputTable').getElementsByTagName('tbody')[0];
+            const newRow = outputTable.insertRow();
+            newRow.innerHTML = `
+                <td>${timestamp}</td>
+                <td>${vorname}</td>
+                <td>${name}</td>
+                <td>${phone}</td>
+                <td>${email}</td>
+                <td>${thema}</td>
+                <td>${nachricht}</td>
+            `;
+
+            // Formular zurücksetzen
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+
+</body>
+</html>
