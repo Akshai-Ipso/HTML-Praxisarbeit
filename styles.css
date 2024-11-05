@@ -94,6 +94,15 @@ header {
     text-align: center;
 }
 
+/* Spezielle Stile für Titel in der .services-Sektion */
+.services h2 {
+    color: var(--primary-color); /* Dunklere Farbe für bessere Sichtbarkeit */
+    font-size: var(--font-size-heading);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 .service-items, .leistungen-content {
     display: flex;
     justify-content: space-around;
@@ -298,7 +307,6 @@ footer {
     }
 
     .banner h1, .leistungen-banner h1, .kontakt-banner h1, .impressum-banner h1 {
-        font-size: 1.9rem;
-
+        font-size: 1.8rem;
     }
 }
