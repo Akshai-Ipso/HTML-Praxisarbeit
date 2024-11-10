@@ -1,7 +1,7 @@
 :root {
     --primary-color: #333;
     --secondary-color: #f8f8f8;
-    --text-color: #333; /* Textfarbe auf Schwarz setzen */
+    --text-color: #fff;
     --highlight-color: #555;
     --font-size-base: 16px;
     --font-size-heading: 2rem;
@@ -275,13 +275,13 @@ footer {
 }
 
 .impressum-content p, .quellenangaben p, .quellenangaben ul li {
-    color: #000; /* Textfarbe explizit auf Schwarz setzen */
+    color: #000; /* Dunkles Schwarz für bessere Lesbarkeit nur im Quellenangaben-Bereich */
     margin-top: 1rem;
     line-height: 1.6;
 }
 
 .quellenangaben ul li a {
-    color: #000; /* Linkfarbe explizit auf Schwarz setzen */
+    color: #000; /* Schwarz für Links im Quellenangaben-Bereich */
     text-decoration: underline;
 }
 
@@ -296,6 +296,7 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
 }
+
 
 /* Modal-Inhalt */
 .modal-content {
