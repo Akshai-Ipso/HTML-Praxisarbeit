@@ -88,7 +88,7 @@ header {
 }
 
 /* Inhalte */
-.services, .leistungen-content, .kontakt-formular, .video-section, .impressum-content {
+.services, .leistungen-content, .kontakt-formular, .video-section, .impressum-content, .quellenangaben {
     padding: 2rem;
     text-align: center;
 }
@@ -260,24 +260,29 @@ footer {
     text-align: center;
 }
 
-/* Impressum Inhalte */
-.impressum-content {
+/* Impressum und Quellenangaben Inhalte */
+.impressum-content, .quellenangaben {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
 }
 
-.impressum-content h2 {
+.impressum-content h2, .quellenangaben h2 {
     color: var(--primary-color);
-    margin-top: 1.5rem;
     font-size: var(--font-size-subheading);
     font-weight: bold;
+    margin-top: 1.5rem;
 }
 
-.impressum-content p {
+.impressum-content p, .quellenangaben p, .quellenangaben ul li {
+    color: #333; /* Dunkles Schwarz für bessere Lesbarkeit */
     margin-top: 1rem;
     line-height: 1.6;
-    color: var(--primary-color);
+}
+
+.quellenangaben ul li a {
+    color: #0056b3; /* Farbe für Links im Quellenangaben-Bereich */
+    text-decoration: underline;
 }
 
 /* Datenschutz-Hinweis Modal */
@@ -315,6 +320,7 @@ footer {
     cursor: pointer;
 }
 
+
 /* Bewertungssystem */
 .rating-section, .reviews-section {
     max-width: 600px;
@@ -330,7 +336,7 @@ footer {
 }
 
 .star-rating .star:hover, .star-rating .star.selected {
-    color: #f39c12; /* Farbe für ausgewählte Sterne */
+    color: #f39c12;
 }
 
 textarea#comment {
