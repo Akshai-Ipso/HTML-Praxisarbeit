@@ -49,42 +49,32 @@ function updateStars() {
 
 // Funktion zum Absenden der Bewertung
 function submitRating() {
-    const comment = document.getElementById("comment").value;
+    const rating = document.querySelector('.star.selected') ? document.querySelector('.star.selected').dataset.value : null;
+    const comment = document.getElementById('comment').value;
 
-    if (selectedRating > 0 && comment) {
-        addReview(selectedRating, comment);
-        resetForm();
+    if (rating && comment) {
+        const reviewContainer = document.getElementById('reviews');
+        
+        // Neue Bewertung hinzufügen
+        const review = document.createElement('div');
+        review.classList.add('review');
+        review.innerHTML = `<strong>${rating} Sterne</strong><p>${comment}</p>`;
+        
+        reviewContainer.appendChild(review);
+
+        // Formular zurücksetzen
+        document.querySelectorAll('.star').forEach(star => star.classList.remove('selected'));
+        document.getElementById('comment').value = '';
+        alert('Danke für Ihre Bewertung!');
     } else {
-        alert("Bitte geben Sie eine Bewertung und einen Kommentar ab.");
+        alert('Bitte geben Sie eine Bewertung und einen Kommentar ein.');
     }
 }
 
-// Fügt eine neue Bewertung in den Reviews-Bereich hinzu
-function addReview(rating, comment) {
-    const reviews = document.getElementById("reviews");
-    
-    const reviewDiv = document.createElement("div");
-    reviewDiv.classList.add("review");
-
-    // Sterne-Anzeige für die Bewertung
-    const ratingSpan = document.createElement("span");
-    ratingSpan.classList.add("rating");
-    ratingSpan.textContent = "★".repeat(rating);
-    reviewDiv.appendChild(ratingSpan);
-
-    // Kommentartext
-    const commentP = document.createElement("p");
-    commentP.classList.add("comment");
-    commentP.textContent = comment;
-    reviewDiv.appendChild(commentP);
-
-    reviews.appendChild(reviewDiv);
-}
-
-// Setzt das Formular nach dem Absenden zurück
-function resetForm() {
-    selectedRating = 0;
-    updateStars();
-    document.getElementById("comment").value = "";
-}
-
+// Sterne-Interaktivität
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', function() {
+        document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+        this.classList.add('selected');
+    });
+});
