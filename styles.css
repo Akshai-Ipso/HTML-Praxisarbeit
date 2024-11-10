@@ -330,7 +330,7 @@ footer {
 }
 
 .star-rating .star:hover, .star-rating .star.selected {
-    color: #f39c12;
+    color: #f39c12; /* Farbe für ausgewählte Sterne */
 }
 
 textarea#comment {
