@@ -275,13 +275,13 @@ footer {
 }
 
 .impressum-content p, .quellenangaben p, .quellenangaben ul li {
-    color: #333; /* Dunkles Schwarz für bessere Lesbarkeit */
+    color: #333; /* Schwarz für bessere Lesbarkeit */
     margin-top: 1rem;
     line-height: 1.6;
 }
 
 .quellenangaben ul li a {
-    color: #000;; /* Farbe für Links im Quellenangaben-Bereich */
+    color: #000; /* Schwarz für Links im Quellenangaben-Bereich */
     text-decoration: underline;
 }
 
