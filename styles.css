@@ -93,12 +93,11 @@ header {
     text-align: center;
 }
 
-.services h2 {
+.services h2, .video-section h2 {
     color: var(--primary-color);
     font-size: var(--font-size-heading);
     margin-bottom: 1rem;
     font-weight: bold;
-    text-align: center;
 }
 
 .service-items, .leistungen-content {
@@ -120,16 +119,9 @@ header {
 /* Video-Bereich */
 .video-section {
     padding: 2rem;
-    text-align: center;
     background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.video-section h2 {
-    color: var(--primary-color);
-    font-size: var(--font-size-heading);
-    margin-bottom: 1rem;
 }
 
 .video-section p {
@@ -313,7 +305,6 @@ footer {
     text-align: center;
 }
 
-/* Schließen-Button */
 .close-btn {
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -321,7 +312,7 @@ footer {
     position: absolute;
     top: 10px;
     right: 20px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 /* Bewertungssystem */
@@ -339,14 +330,14 @@ footer {
 }
 
 .star-rating .star:hover, .star-rating .star.selected {
-    color: #f39c12; /* Farbe für ausgewählte Sterne */
+    color: #f39c12;
 }
 
 textarea#comment {
     width: 100%;
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     border: 1px solid #ccc;
     resize: vertical;
 }
@@ -358,7 +349,7 @@ button {
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-duration) ease;
 }
 
 button:hover {

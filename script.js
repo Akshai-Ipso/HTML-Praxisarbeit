@@ -1,17 +1,21 @@
-// Funktion zum Anzeigen des Datenschutz-Hinweises
+// Funktion zum Anzeigen des Datenschutz-Hinweises 
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("datenschutzModal");
     const closeModal = document.getElementById("closeModal");
     const acceptCookies = document.getElementById("acceptCookies");
 
-    // Modal anzeigen
-    modal.style.display = "block";
+    // Prüfen, ob der Benutzer den Hinweis bereits akzeptiert hat
+    if (localStorage.getItem("cookiesAccepted") !== "true") {
+        // Modal anzeigen
+        modal.style.display = "block";
+    }
 
-    // Modal schließen, wenn der Benutzer auf das "X" oder "Akzeptieren" klickt
+    // Modal schließen, wenn der Benutzer auf das "X" klickt
     closeModal.onclick = function () {
         modal.style.display = "none";
     };
 
+    // Modal schließen und Zustimmung speichern, wenn "Akzeptieren" geklickt wird
     acceptCookies.onclick = function () {
         modal.style.display = "none";
         // Setze ein Cookie oder eine lokale Speicherung, um den Hinweis nur einmal anzuzeigen
@@ -24,57 +28,47 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     };
-
-    // Prüfen, ob der Benutzer den Hinweis bereits akzeptiert hat
-    if (localStorage.getItem("cookiesAccepted") === "true") {
-        modal.style.display = "none";
-    }
 });
-// Globale Variablen zum Speichern der Bewertung und des Kommentars
+
+// Globale Variable zum Speichern der ausgewählten Bewertung
 let selectedRating = 0;
 
-document.querySelectorAll(".star").forEach(star => {
+// Sterne-Interaktivität: Klick-Event für Sterne
+document.querySelectorAll(".star").forEach((star, index) => {
     star.addEventListener("click", function() {
-        selectedRating = this.getAttribute("data-value");
-        updateStars();
+        selectedRating = index + 1; // Speichere die ausgewählte Bewertung
+        updateStars(); // Aktualisiere die Sterneanzeige
     });
 });
 
 // Aktualisiert die Sternen-Anzeige je nach ausgewählter Bewertung
 function updateStars() {
-    document.querySelectorAll(".star").forEach(star => {
-        star.classList.toggle("selected", star.getAttribute("data-value") <= selectedRating);
+    document.querySelectorAll(".star").forEach((star, index) => {
+        // Markiere alle Sterne bis zur ausgewählten Bewertung als ausgewählt
+        star.classList.toggle("selected", index < selectedRating);
     });
 }
 
 // Funktion zum Absenden der Bewertung
 function submitRating() {
-    const rating = document.querySelector('.star.selected') ? document.querySelector('.star.selected').dataset.value : null;
     const comment = document.getElementById('comment').value;
 
-    if (rating && comment) {
+    if (selectedRating && comment) {
         const reviewContainer = document.getElementById('reviews');
         
         // Neue Bewertung hinzufügen
         const review = document.createElement('div');
         review.classList.add('review');
-        review.innerHTML = `<strong>${rating} Sterne</strong><p>${comment}</p>`;
+        review.innerHTML = `<strong>${selectedRating} Sterne</strong><p>${comment}</p>`;
         
         reviewContainer.appendChild(review);
 
         // Formular zurücksetzen
-        document.querySelectorAll('.star').forEach(star => star.classList.remove('selected'));
-        document.getElementById('comment').value = '';
+        selectedRating = 0; // Bewertung zurücksetzen
+        updateStars(); // Sterneanzeige zurücksetzen
+        document.getElementById('comment').value = ''; // Kommentar zurücksetzen
         alert('Danke für Ihre Bewertung!');
     } else {
         alert('Bitte geben Sie eine Bewertung und einen Kommentar ein.');
     }
 }
-
-// Sterne-Interaktivität
-document.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', function() {
-        document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
-        this.classList.add('selected');
-    });
-});
