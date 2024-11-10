@@ -290,23 +290,3 @@ footer {
     line-height: 1.6;
     color: var(--primary-color);
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-    }
-
-    .service-items, .leistungen-content, .about-content {
-        flex-direction: column;
-    }
-
-    .service-item, .leistung, .about-text, .brand-logo img {
-        width: 100%;
-        text-align: center;
-    }
-
-    .banner h1, .leistungen-banner h1, .kontakt-banner h1, .impressum-banner h1 {
-        font-size: 1.8rem;
-    }
-}
