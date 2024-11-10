@@ -1,7 +1,7 @@
 :root {
     --primary-color: #333;
     --secondary-color: #f8f8f8;
-    --text-color: #fff;
+    --text-color: #333; /* Textfarbe auf Schwarz setzen */
     --highlight-color: #555;
     --font-size-base: 16px;
     --font-size-heading: 2rem;
@@ -275,13 +275,13 @@ footer {
 }
 
 .impressum-content p, .quellenangaben p, .quellenangaben ul li {
-    color: #333; /* Schwarz für bessere Lesbarkeit */
+    color: #333; /* Textfarbe explizit auf Schwarz setzen */
     margin-top: 1rem;
     line-height: 1.6;
 }
 
 .quellenangaben ul li a {
-    color: #000; /* Schwarz für Links im Quellenangaben-Bereich */
+    color: #000; /* Linkfarbe explizit auf Schwarz setzen */
     text-decoration: underline;
 }
 
@@ -319,7 +319,6 @@ footer {
     right: 20px;
     cursor: pointer;
 }
-
 
 /* Bewertungssystem */
 .rating-section, .reviews-section {
