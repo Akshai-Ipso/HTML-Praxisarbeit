@@ -275,7 +275,7 @@ footer {
 }
 
 .impressum-content p, .quellenangaben p, .quellenangaben ul li {
-    color: #333; /* Textfarbe explizit auf Schwarz setzen */
+    color: #000; /* Textfarbe explizit auf Schwarz setzen */
     margin-top: 1rem;
     line-height: 1.6;
 }
@@ -309,6 +309,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
 
 .close-btn {
     color: var(--primary-color);
