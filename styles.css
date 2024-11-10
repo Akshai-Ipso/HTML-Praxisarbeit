@@ -40,7 +40,7 @@ header {
 }
 
 .logo:hover {
-    transform: scale(1.1); /* Vergrößert das Logo leicht beim Hover */
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -63,15 +63,14 @@ header {
     text-align: center;
     color: var(--text-color);
     margin-bottom: 2rem;
-    height: 300px; /* Einheitsgröße für alle Banner */
-    overflow: hidden; /* Falls das Bild größer ist, wird es abgeschnitten */
+    height: 300px;
+    overflow: hidden;
 }
 
-/* Banner-Bilder anpassen */
 .banner img, .leistungen-banner img, .kontakt-banner img, .impressum-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Bild füllt den gesamten Banner-Bereich aus */
+    object-fit: cover;
 }
 
 /* Banner-Titel zentrieren */
@@ -82,8 +81,8 @@ header {
     transform: translate(-50%, -50%);
     font-size: var(--font-size-heading);
     color: var(--text-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Schatten für Textlesbarkeit */
-    background-color: rgba(0, 0, 0, 0.3); /* Leicht transparenter Hintergrund für bessere Lesbarkeit */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
 }
@@ -94,9 +93,8 @@ header {
     text-align: center;
 }
 
-/* Spezielle Stile für Titel in der .services-Sektion */
 .services h2 {
-    color: var(--primary-color); /* Dunklere Farbe für bessere Sichtbarkeit */
+    color: var(--primary-color);
     font-size: var(--font-size-heading);
     margin-bottom: 1rem;
     font-weight: bold;
@@ -123,28 +121,28 @@ header {
 .video-section {
     padding: 2rem;
     text-align: center;
-    background-color: var(--secondary-color); /* Hintergrundfarbe für den Video-Bereich */
-    border-radius: var(--border-radius); /* Runde Ecken für den Bereich */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für den Bereich */
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-section h2 {
-    color: var(--primary-color); /* Farbe für den Titel des Video-Bereichs */
+    color: var(--primary-color);
     font-size: var(--font-size-heading);
     margin-bottom: 1rem;
 }
 
 .video-section p {
-    color: var(--highlight-color); /* Leichte Hervorhebung für den Text unter dem Titel */
+    color: var(--highlight-color);
     font-size: var(--font-size-base);
     margin-bottom: 1rem;
 }
 
 .video-section video {
-    max-width: 100%; /* Video passt sich der Breite des Containers an */
-    height: auto; /* Erhält das Seitenverhältnis des Videos */
-    border-radius: var(--border-radius); /* Runde Ecken für das Video */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Schatten um das Video herum */
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Über uns-Bereich */
@@ -165,14 +163,14 @@ header {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
-    background-color: var(--secondary-color); /* Heller Hintergrund */
+    background-color: var(--secondary-color);
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .kontakt-formular h2 {
-    color: var(--primary-color); /* Dunklere Überschrift */
+    color: var(--primary-color);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -181,7 +179,7 @@ header {
     display: block;
     margin-top: 1rem;
     font-weight: bold;
-    color: var(--primary-color); /* Dunkle Beschriftungen für besseren Kontrast */
+    color: var(--primary-color);
 }
 
 .kontakt-formular input, .kontakt-formular textarea {
@@ -190,12 +188,12 @@ header {
     margin-top: 0.5rem;
     border-radius: var(--border-radius);
     border: 1px solid #ccc;
-    color: var(--primary-color); /* Dunkler Text für Eingabefelder */
-    background-color: #ffffff; /* Weißer Hintergrund für Eingabefelder */
+    color: var(--primary-color);
+    background-color: #ffffff;
 }
 
 .kontakt-formular input::placeholder, .kontakt-formular textarea::placeholder {
-    color: #aaa; /* Platzhalter in hellerer Farbe */
+    color: #aaa;
 }
 
 .kontakt-formular button {
@@ -226,7 +224,7 @@ header {
 }
 
 #outputSection h3 {
-    color: var(--primary-color); /* Dunkle Farbe für bessere Lesbarkeit */
+    color: var(--primary-color);
     font-weight: bold;
     margin-bottom: 1rem;
 }
@@ -242,7 +240,6 @@ header {
     color: var(--primary-color);
 }
 
-/* Tabelle für ausgegebene Daten */
 #outputTable {
     width: 100%;
     border-collapse: collapse;
@@ -259,7 +256,7 @@ header {
 
 #outputTable th {
     background-color: var(--primary-color);
-    color: var(--text-color); /* Setzt die Textfarbe des Tabellenkopfs auf Weiß */
+    color: var(--text-color);
     font-weight: bold;
 }
 
@@ -279,7 +276,7 @@ footer {
 }
 
 .impressum-content h2 {
-    color: var(--primary-color); /* Farbe der Titel auf der Impressum-Seite */
+    color: var(--primary-color);
     margin-top: 1.5rem;
     font-size: var(--font-size-subheading);
     font-weight: bold;
@@ -289,4 +286,40 @@ footer {
     margin-top: 1rem;
     line-height: 1.6;
     color: var(--primary-color);
+}
+
+/* Datenschutz-Hinweis Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal-Inhalt */
+.modal-content {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Schließen-Button */
+.close-btn {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer
 }
