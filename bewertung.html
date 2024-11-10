@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Aarau - Bewertung</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Bewertungssystem -->
+    <section class="rating-section">
+        <h2>Bewertung abgeben</h2>
+        
+        <!-- Sterne-Bewertung -->
+        <div class="star-rating">
+            <span class="star" data-value="5">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="1">★</span>
+        </div>
+        
+        <!-- Kommentar-Bereich -->
+        <textarea id="comment" rows="4" placeholder="Schreiben Sie hier Ihren Kommentar..."></textarea>
+        
+        <!-- Bewertung absenden -->
+        <button onclick="submitRating()">Bewertung absenden</button>
+    </section>
+
+    <!-- Anzeige der Bewertungen -->
+    <section class="reviews-section">
+        <h3>Bewertungen</h3>
+        <div id="reviews"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

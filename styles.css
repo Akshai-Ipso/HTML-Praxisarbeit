@@ -324,23 +324,80 @@ footer {
     cursor: pointer
 }
 
-/* Scroll-to-Top Button */
-#scrollToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none; /* Startet ausgeblendet */
+/* Bewertungssystem */
+.rating-section, .reviews-section {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.rating-section h2, .reviews-section h3 {
+    text-align: center;
+    color: #333;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.star:hover,
+.star.selected {
+    color: #ffdd00;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
     background-color: #333;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    font-size: 18px;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-#scrollToTopBtn:hover {
+button:hover {
     background-color: #555;
+}
+
+/* Bewertungen */
+#reviews {
+    margin-top: 20px;
+}
+
+.review {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.review .rating {
+    color: #ffdd00;
+    font-size: 1.5rem;
+}
+
+.review .comment {
+    margin-top: 5px;
 }

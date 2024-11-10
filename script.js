@@ -30,21 +30,61 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     }
 });
+// Globale Variablen zum Speichern der Bewertung und des Kommentars
+let selectedRating = 0;
 
-// Zeige den Button nur beim Scrollen
-window.onscroll = function() {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-};
+document.querySelectorAll(".star").forEach(star => {
+    star.addEventListener("click", function() {
+        selectedRating = this.getAttribute("data-value");
+        updateStars();
+    });
+});
 
-// Funktion zum Scrollen nach oben
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+// Aktualisiert die Sternen-Anzeige je nach ausgewählter Bewertung
+function updateStars() {
+    document.querySelectorAll(".star").forEach(star => {
+        star.classList.toggle("selected", star.getAttribute("data-value") <= selectedRating);
     });
 }
+
+// Funktion zum Absenden der Bewertung
+function submitRating() {
+    const comment = document.getElementById("comment").value;
+
+    if (selectedRating > 0 && comment) {
+        addReview(selectedRating, comment);
+        resetForm();
+    } else {
+        alert("Bitte geben Sie eine Bewertung und einen Kommentar ab.");
+    }
+}
+
+// Fügt eine neue Bewertung in den Reviews-Bereich hinzu
+function addReview(rating, comment) {
+    const reviews = document.getElementById("reviews");
+    
+    const reviewDiv = document.createElement("div");
+    reviewDiv.classList.add("review");
+
+    // Sterne-Anzeige für die Bewertung
+    const ratingSpan = document.createElement("span");
+    ratingSpan.classList.add("rating");
+    ratingSpan.textContent = "★".repeat(rating);
+    reviewDiv.appendChild(ratingSpan);
+
+    // Kommentartext
+    const commentP = document.createElement("p");
+    commentP.classList.add("comment");
+    commentP.textContent = comment;
+    reviewDiv.appendChild(commentP);
+
+    reviews.appendChild(reviewDiv);
+}
+
+// Setzt das Formular nach dem Absenden zurück
+function resetForm() {
+    selectedRating = 0;
+    updateStars();
+    document.getElementById("comment").value = "";
+}
+
