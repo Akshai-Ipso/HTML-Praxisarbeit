@@ -281,7 +281,7 @@ footer {
 }
 
 .quellenangaben ul li a {
-    color: #0056b3; /* Farbe für Links im Quellenangaben-Bereich */
+    color: #000;; /* Farbe für Links im Quellenangaben-Bereich */
     text-decoration: underline;
 }
 
