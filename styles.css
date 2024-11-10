@@ -275,13 +275,13 @@ footer {
 }
 
 .impressum-content p, .quellenangaben p, .quellenangaben ul li {
-    color: #000; /* Dunkles Schwarz für bessere Lesbarkeit nur im Quellenangaben-Bereich */
+    color: #333; /* Dunkles Schwarz für bessere Lesbarkeit */
     margin-top: 1rem;
     line-height: 1.6;
 }
 
 .quellenangaben ul li a {
-    color: #000; /* Schwarz für Links im Quellenangaben-Bereich */
+    color: #000;; /* Farbe für Links im Quellenangaben-Bereich */
     text-decoration: underline;
 }
 
@@ -297,7 +297,6 @@ footer {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-
 /* Modal-Inhalt */
 .modal-content {
     background-color: var(--secondary-color);
@@ -311,7 +310,6 @@ footer {
     text-align: center;
 }
 
-
 .close-btn {
     color: var(--primary-color);
     font-size: 1.5rem;
@@ -321,6 +319,7 @@ footer {
     right: 20px;
     cursor: pointer;
 }
+
 
 /* Bewertungssystem */
 .rating-section, .reviews-section {
