@@ -30,3 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     }
 });
+
+// Zeige den Button nur beim Scrollen
+window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Funktion zum Scrollen nach oben
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
